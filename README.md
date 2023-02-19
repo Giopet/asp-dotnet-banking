@@ -1,3 +1,3 @@
 # asp-dotnet-banking
 
-web API with ASP.NET Core 
+web API with ASP.NET Core 6
