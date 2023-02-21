@@ -56,4 +56,4 @@ API stands between our server, our assets, and all the various clients that use 
 ## Notes
 
 - Uri of default controller (7170 is a random port): *localhost/7170/weatherforecast*  . 
---If the page here comes at as blank. So if you don't see anything. Maybe, just maybe you were just using HTTPS local host and then ran a port number but not the /weatherforecast at the end. It's an API, we don't have a root page or an empty page that's just showing us information about the API. And the UI we had automatically created for our API. It's also not available as the root document. So it's using a different URL. So if that is the case, just check whether you have the correct URL.
+-- If the page here comes at as blank. So if you don't see anything. Maybe, just maybe you were just using HTTPS local host and then ran a port number but not the /weatherforecast at the end. It's an API, we don't have a root page or an empty page that's just showing us information about the API. And the UI we had automatically created for our API. It's also not available as the root document. So it's using a different URL. So if that is the case, just check whether you have the correct URL.
