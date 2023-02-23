@@ -86,3 +86,12 @@ API stands between our server, our assets, and all the various clients that use 
 
 - Uri of default controller (7170 is a random port): *localhost/7170/weatherforecast*  .
 If the page here comes at as blank. So if you don't see anything. Maybe, just maybe you were just using HTTPS local host and then ran a port number but not the /weatherforecast at the end. It's an API, we don't have a root page or an empty page that's just showing us information about the API. And the UI we had automatically created for our API. It's also not available as the root document. So it's using a different URL. So if that is the case, just check whether you have the correct URL.
+
+## 
+
+| Attribute                  | Description                                            |  Note |
+|----------------------------|--------------------------------------------------------|--------------|
+| [Route("/accounts")]       | URL to call the API                                    | If we have the route attribute and we use it like this then basically we say use /accounts, so local host port one, two, three /accounts to call this very specific method, for instance, to retrieve all accounts. |
+| [Route("/accounts/{id}")]  | Controller action parameter is taken from URL          | If you would like to have parameters as part of the URL, and there'll be more on that later, we could use this syntax. So /accounts/42 means that id has the value of 42, and that ID is then a parameter for the action method. So we would have maybe an action method called get product and then in parentheses int id or string id, depending on the data type, and that would be filled automatically with the data from the URL. |
+| [Route("/accounts/{id?}")] | Optional controller action parameter is taken from URL | The data type and the action method is not say int, but instead nullable int.|
+| [Route("/[controller]")]   | Use controller name in URL                             | The most common in use. That's not the name of the class, it's the name of the controller, which is the class name minus controller. |
