@@ -21,7 +21,7 @@ namespace Banking.API.Controllers
             _context = context;
 
             // Runs the seed if that hasn't taken place
-            _context.Database.EnsureCreated(); 
+            _context.Database.EnsureCreated();
         }
 
         ///// <summary>
@@ -56,7 +56,7 @@ namespace Banking.API.Controllers
         {
             var account = await _context.Accounts.FindAsync(id);
 
-            if(account == null)
+            if (account == null)
             {
                 return NotFound();
             }
@@ -75,14 +75,50 @@ namespace Banking.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Account>> PostAccount(Account account)
         {
+            // If a required property is missing from post (attribute 'required' upon model's properties).
+            // We can add a custom error handling instead here.
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             _context.Accounts.Add(account);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
                 nameof(PostAccount), // Name of the action (method) that returns the specific account
-                new { id = account.Id}, 
+                new { id = account.Id },
                 account
             );
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutAccount(int id, Account account)
+        {
+            if (id != account.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(account).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Accounts.Any(a => a.Id == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw; // HTTP 500 error
+                }
+            }
+
+            return NoContent();
         }
     }
 }

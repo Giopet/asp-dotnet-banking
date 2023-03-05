@@ -7,10 +7,13 @@ namespace Banking.API.Models
     {
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; } = string.Empty;
 
+        [Required]
         public int Currency { get; set; }
-        
+
+        [Required]
         public int Country { get; set; }
 
         public decimal Balance { get; set; }
