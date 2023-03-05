@@ -96,7 +96,7 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
 | [Route("/accounts/{id?}")] | Optional controller action parameter is taken from URL | The data type and the action method is not say int, but instead nullable int.|
 | [Route("/[controller]")]   | Use controller name in URL                             | The most common in use. That's not the name of the class, it's the name of the controller, which is the class name minus controller. |
 
-## EnityFrameWork Core
+## EnityFramework Core
 
 - Tools -> NuGet Package Manager -> Package Manager Console
   ```console
