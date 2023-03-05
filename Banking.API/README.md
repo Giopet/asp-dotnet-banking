@@ -95,3 +95,11 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
 | [Route("/accounts/{id}")]  | Controller action parameter is taken from URL          | If you would like to have parameters as part of the URL, and there'll be more on that later, we could use this syntax. So /accounts/42 means that id has the value of 42, and that ID is then a parameter for the action method. So we would have maybe an action method called get product and then in parentheses int id or string id, depending on the data type, and that would be filled automatically with the data from the URL. |
 | [Route("/accounts/{id?}")] | Optional controller action parameter is taken from URL | The data type and the action method is not say int, but instead nullable int.|
 | [Route("/[controller]")]   | Use controller name in URL                             | The most common in use. That's not the name of the class, it's the name of the controller, which is the class name minus controller. |
+
+## Enity FrameWork Core
+
+- Tools -> NuGet Package Manager -> Package Manager Console
+  ```console
+  > Install-Package Microsoft.EntityFrameworkCore
+  > Install-Package Microsoft.EntityFrameworkCore.InMemory
+  ```
