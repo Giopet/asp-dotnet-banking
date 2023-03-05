@@ -99,10 +99,10 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
 ## EnityFramework Core
 
 - Tools -> NuGet Package Manager -> Package Manager Console
-  ```console
-  > Install-Package Microsoft.EntityFrameworkCore
-  > Install-Package Microsoft.EntityFrameworkCore.InMemory
-  ```
+  	```console
+  	> Install-Package Microsoft.EntityFrameworkCore
+  	> Install-Package Microsoft.EntityFrameworkCore.InMemory
+  	```
 ## Accept Data from HTTP requests
 
 1. [FromBody] : Data from the body of the HTTP request, mostly POST/PUT.
