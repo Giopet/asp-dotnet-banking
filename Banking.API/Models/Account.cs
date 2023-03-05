@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Banking.API.Models
 {
@@ -16,14 +17,19 @@ namespace Banking.API.Models
 
         public bool IsActive { get; set; }
 
+        /// <summary>
+        /// Required for POST/PUT method to give a value.
+        /// </summary>
+        [Required]
         public int PersonId { get; set; }
 
         /// <summary>
         /// We have to tell the serializer that this should not be serialized due to infinite loop.
         /// Person reference accounts and accounts reference person.
+        /// We make it nullable, otherwise we will have bad request response when we try to call a POST/PUT method.
         /// </summary>
         [JsonIgnore]
-        public virtual Person Person { get; set; }
+        public virtual Person? Person { get; set; }
 
     }
 }

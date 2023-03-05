@@ -63,5 +63,26 @@ namespace Banking.API.Controllers
 
             return Ok(account);
         }
+
+        /// <summary>
+        /// You could use also IActionResult interface to have more functionalities on posting.
+        /// It is better to use DTOs instead of the business model here, because you might need only some of the properties.
+        /// It is more safe for someone who might need to put malicious data into properties that we thing are not gonna change.
+        /// Requst URI: https://localhost:7276/api/Accounts
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<ActionResult<Account>> PostAccount(Account account)
+        {
+            _context.Accounts.Add(account);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                nameof(PostAccount), // Name of the action (method) that returns the specific account
+                new { id = account.Id}, 
+                account
+            );
+        }
     }
 }
