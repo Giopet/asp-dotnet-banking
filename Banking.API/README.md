@@ -100,5 +100,6 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
 
 - Tools -> NuGet Package Manager -> Package Manager Console
   ```console
-  Install-Package Microsoft.EntityFrameworkCore
+  > Install-Package Microsoft.EntityFrameworkCore
+  > Install-Package Microsoft.EntityFrameworkCore.InMemory
   ```
