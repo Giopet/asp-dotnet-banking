@@ -120,5 +120,49 @@ namespace Banking.API.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Account>> DeleteAccount(int id)
+        {
+            var account = await _context.Accounts.FindAsync(id);
+            if(account == null)
+            {
+                return NotFound(); // 404
+            }
+
+            _context.Accounts.Remove(account);
+            await _context.SaveChangesAsync();
+
+            return account;
+        }
+
+        /// <summary>
+        /// It is http post instead of http delete because delete can delete only one item.
+        /// https://localhost:7276/api/Accounts/Delete?ids=1&ids=2&ids=3&ids=4
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("Delete")]
+        public async Task<ActionResult> DeleteMultiple([FromQuery]int[] ids)
+        {
+            var accounts = new List<Account>();
+            foreach( var id in ids)
+            {
+                var acoount = await _context.Accounts.FindAsync(id);
+
+                if (acoount == null)
+                {
+                    return NotFound();
+                }
+
+                accounts.Add(acoount);
+            }
+
+            _context.Accounts.RemoveRange(accounts);
+            await _context.SaveChangesAsync();
+
+            return Ok(accounts);
+        }
     }
 }
