@@ -109,7 +109,7 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
 2. [FromRoute] : Data from the route template.
 3. [FromQuery] : Data from the URL.
 
-## Explore More
+## More to Explore
 
 - Advanced data retrieval
 - Versioning APIs
