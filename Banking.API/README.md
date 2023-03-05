@@ -103,3 +103,8 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
   > Install-Package Microsoft.EntityFrameworkCore
   > Install-Package Microsoft.EntityFrameworkCore.InMemory
   ```
+## Accept Date from HTTP requests
+
+1. [FromBody] : Data from the body of the HTTP request, mostly POST/PUT.
+2. [FromRoute] : Data from the route template.
+3. [FromQuery] : Data from the URL.
