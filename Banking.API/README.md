@@ -108,3 +108,11 @@ If the page here comes at as blank. So if you don't see anything. Maybe, just ma
 1. [FromBody] : Data from the body of the HTTP request, mostly POST/PUT.
 2. [FromRoute] : Data from the route template.
 3. [FromQuery] : Data from the URL.
+
+## More to Explore
+
+- Advanced data retrieval
+- Versioning APIs
+- Securring APIs
+- API Design
+- ASP .NET Core Security
