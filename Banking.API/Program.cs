@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 //// The required property will take a default value with this options and no bad request will return.
-//// Dont forget to comment any check like this: if (!ModelState.IsValid)
+//// Dont forget to comment any check like this: if (!ModelState.IsValid).. examle in the put method.
 //builder.Services.AddControllers()
 //    .ConfigureApiBehaviorOptions(options =>
 //    {

@@ -1,11 +1,10 @@
-﻿namespace Banking.API.Models
+﻿namespace Banking.API.Models;
+
+public class Person
 {
-    public class Person
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        public string Name { get; set; } = String.Empty;
+    public string Name { get; set; } = String.Empty;
 
-        public virtual List<Account> Accounts { get; set; }
-    }
+    public virtual List<Account> Accounts { get; set; }
 }
