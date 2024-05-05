@@ -38,5 +38,8 @@ To put it globally you can send headers in web.config, meaning you send Access-C
 
   - Return IEnumerable instead of IQueryable : the caller who receives the IQueryable instance can use that and then maybe include other tables from the model, but the calling code maybe should not have access to those tables. Convert everything to IEnumerable (.ToList()) and then the caller cannot include any other tables but just gets the data in form of a list. <br>
 
-  - Do parameterization ('@') or use strongly type parameters in the method for example int for id instead of string.
+  - Do parameterization ('@') or use strongly type parameters in the method for example int for id instead of string. <br>
+ 
+- **Cross-Site Request Forgery (CSRF)**: <br>
+
 
