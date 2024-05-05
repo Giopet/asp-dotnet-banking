@@ -23,7 +23,8 @@ The origin header, and the value of that header is the current origin. So the or
 ![image](https://github.com/Giopet/asp-dotnet-banking/assets/53083156/93770a7c-083c-4f3e-98d2-bdb5613f36ae) <br>
 
 - **Enabling CORS in ASP.NET**: <br>
+Old way: <br>
 [EnableCors(origins: "https://hplussport.com")] . Put this attribute on a controller level or on an action level method to allow Access-Control-Allow-Origin. <br>
 The opposite is [DisableCors()] . <br>
-To put it globally you can send headers in web.config, meaning you send Access-Control-Allow-Origin HTTP header with each HTTP response.
+To put it globally you can send headers in web.config, meaning you send Access-Control-Allow-Origin HTTP header with each HTTP response. <br>
 
