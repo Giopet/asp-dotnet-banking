@@ -55,5 +55,11 @@ On the server, we have an HTTP POST action method, for GET there is no really go
 2. Externalizing Web.config settings : This achieves exclusion from git repo.
 3. Encrypting Web.config : You can use 'aspnet_regiis -pe' for encryption and 'aspnet_regiis -pd' fro decryption.
 4. Azure Key Vault : Only if you use Azure.
-5. Password hashing : 
+5. Password hashing  <br>
+
+- **IdentityServer**: <br>
+1. Configuring IdentityServer
+2. Authenticating against IdentityServer
+3. Authorizing against IdentityServer
+
 
