@@ -29,7 +29,7 @@ The opposite is [DisableCors()] . <br>
 To put it globally you can send headers in web.config, meaning you send Access-Control-Allow-Origin HTTP header with each HTTP response. <br>
 
 - **SQL Injection**: <br>
-Avoid execution of raw SQL:
+  - Avoid execution of raw SQL:
   1. DbSet.SqlQuery()
   2. DbContext.Database.SqlQuery()
   3. DbContext.Database.ExecuteSqlCommand()  <br>
