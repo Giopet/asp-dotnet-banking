@@ -24,6 +24,21 @@ builder.Services.AddDbContext<BankingContext>(options =>
     options.UseInMemoryDatabase("Banking");
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        policyBuilder =>
+        {
+            policyBuilder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithExposedHeaders("WWW-Authenticate")
+                .WithOrigins("https://localhost:3000")
+                .AllowCredentials();
+        });
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +47,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// By placing app.UseCors() before app.UseAuthorization() and app.MapControllers(),
+// you ensure that CORS policies are applied to incoming requests early in the pipeline,
+// allowing the appropriate CORS headers to be added or modified before the requests are authorized or routed to controllers.
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 
