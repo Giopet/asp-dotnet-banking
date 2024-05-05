@@ -33,5 +33,6 @@ Avoid execution of raw SQL:
   1. DbSet.SqlQuery()
   2. DbContext.Database.SqlQuery()
   3. DbContext.Database.ExecuteSqlCommand()  <br>
-Check the parameters these methods receive. Are there strings that, you know, are concatenated with user input? Then the application is suspectable of SQL injection. 
+  
+Check the parameters these methods receive. Are there strings that are concatenated with user input? Then the application is suspectable of SQL injection. 
 
