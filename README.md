@@ -41,5 +41,7 @@ To put it globally you can send headers in web.config, meaning you send Access-C
   - Do parameterization ('@') or use strongly type parameters in the method for example int for id instead of string. <br>
  
 - **Cross-Site Request Forgery (CSRF)**: <br>
+The idea is that the victim is authenticated with a web application and the web application is using a cookie-based authentication meaning that every HTTP request comes with the cookie. And based on the cookie, the application authenticates and also authorizes the user. The attacker somehow lures the victim to make an HTTP request to their site. So an HTTP request is being sent to the attacker's server and the attacker returns an HTTP response that in turn triggers a new HTTP request. For instance by doing redirection or with some JavaScript code that does the request. Turns out that this request goes to the web server that is attacked. The browser has a cookie is authenticated So the interests of this that the client makes an HTTP request to the attacked server an authenticated request and therefore can do things for instance, deleting a product from the inventory, do any changes to the database or to the system, but everything is triggered by the attacker. And that's Cross-Site Request Forgery because the attacker can entirely predict how the HTTP request from the client to the server needs to look like. A cookie is something the attacker does not know but the cookie comes along for free.
+![image](https://github.com/Giopet/asp-dotnet-banking/assets/53083156/328b6ea6-557e-42a4-9511-c27d9971aaef)
 
 
